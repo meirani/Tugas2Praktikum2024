@@ -23,9 +23,12 @@ class FormDataState extends State<FormData> {
         margin: const EdgeInsets.all(10),
         child: Column(
           children: [
-            _textboxNama(),
+            _textboxNama(), //sidebox untuk menambah jarak antar textfield
+            const SizedBox(height: 16),
             _textboxNIM(),
+            const SizedBox(height: 16),
             _textboxTahun(),
+            const SizedBox(height: 16),
             _tombolSimpan()
           ],
         ),
@@ -35,21 +38,37 @@ class FormDataState extends State<FormData> {
 
   _textboxNama() {
     return TextField(
-      decoration: const InputDecoration(labelText: "Nama"),
+      decoration: const InputDecoration(
+        labelText: "Nama",
+        labelStyle: TextStyle(color: Colors.blue), // Mengubah warna label
+        border: OutlineInputBorder(), // Menambahkan border pada TextField
+      ),
+      style: const TextStyle(
+          color: Colors.blue, fontSize: 16), // Mengubah warna dan ukuran teks
       controller: _namaController,
     );
   }
 
   _textboxNIM() {
     return TextField(
-      decoration: const InputDecoration(labelText: "NIM"),
+      decoration: const InputDecoration(
+        labelText: "NIM",
+        labelStyle: TextStyle(color: Colors.blue),
+        border: OutlineInputBorder(),
+      ),
+      style: const TextStyle(color: Colors.blue, fontSize: 16),
       controller: _nimController,
     );
   }
 
   _textboxTahun() {
     return TextField(
-      decoration: const InputDecoration(labelText: "Tahun Lahir"),
+      decoration: const InputDecoration(
+        labelText: "Tahun Lahir",
+        labelStyle: TextStyle(color: Colors.blue),
+        border: OutlineInputBorder(),
+      ),
+      style: const TextStyle(color: Colors.blue, fontSize: 16),
       controller: _tahunController,
     );
   }
@@ -64,6 +83,12 @@ class FormDataState extends State<FormData> {
               builder: (context) =>
                   TampilData(nama: nama, nim: nim, tahun: tahun)));
         },
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.blue, // Mengubah warna latar belakang tombol
+          foregroundColor: Colors.white, // Mengubah warna teks tombol
+          padding: const EdgeInsets.symmetric(
+              horizontal: 24, vertical: 12), // Mengubah ukuran padding tombol
+        ),
         child: const Text('Simpan'));
   }
 }
