@@ -8,10 +8,10 @@ Shift Baru: Shift D
 
 ## Penjelasan
 
-1. File main.dart<br>
+1. File main.dart  
 Ini adalah file utama yang menjalankan aplikasi flutter. Di dalamnya terdapat fungsi main() yang memanggil runApp(), yang menjalankan aplikasi. Aplikasi ini menampilkan widget FormData sebagai halaman pertama.
-<br>
-2. File form_data.dart<br>
+
+2. File form_data.dart  
 File ini merupakan file yang membuat field untuk pengguna menginputkan data.
 - FormData adalah StatefulWidget yang menampilkan form input.
 - Pada FormDataState, terdapat tiga TextEditingController (namaController, nimController, dan tahunController) yang digunakan untuk menangani input data dari pengguna.
@@ -19,8 +19,8 @@ File ini merupakan file yang membuat field untuk pengguna menginputkan data.
 - Fungsi _tombolSimpan() untuk tombol "Simpan" yang ketika diklik:
   a. Mengambil teks yang diinputkan melalui controller (_namaController, _nimController, dan _tahunController).
   b. Data kemudian dikirim ke halaman berikutnya yaitu tampil_data.dart menggunakan Navigator.push().
-<br>
-3. File tampil_data.dart<br>
+
+3. File tampil_data.dart  
 File ini merupakan file yang akan menampilkan hasil dari inputan pengguna.
 - TampilData adalah StatelessWidget yang menampilkan data yang dipassing dari halaman form_data.
 - Data nama, nim, dan tahun lahir diterima melalui constructor.
